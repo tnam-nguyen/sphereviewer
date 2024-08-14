@@ -78,7 +78,8 @@
                     );
                    
                     const sphere = new THREE.Mesh(geometry, material);
-                    sphere.position.set(0, 0, 0)
+					//sphere.scale.set(radii[i], radii[i], radii[i]);
+                    
                     sphere.renderOrder = 31-i;
 
                     scene.add(sphere);
@@ -100,8 +101,8 @@
 				container.appendChild( VRButton.createButton( renderer ) );
 
                 controls = new OrbitControls( camera, renderer.domElement );
-                controls.target = new THREE.Vector3(2,0,2);
-                 controls.autoRotate = true;
+                controls.target = new THREE.Vector3(0.5,0,0.5);
+                controls.autoRotate = true;
 				controls.listenToKeyEvents( window ); // optional
                 controls.keyPanSpeed = 100;
 				controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
